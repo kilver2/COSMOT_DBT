@@ -1,0 +1,46 @@
+version: 2
+
+models:
+    - name: stg__brewery__breweries
+
+      columns:
+        - name: brewery_id
+          tests:
+            - unique
+            - not_null
+
+        - name: brewery_type
+          tests:
+            - accepted_values:
+                arguments:
+                    values: ['micro', 'brewpub', 'closed', 'proprietor', 'large']
+
+    - name: int__brewery__breweries
+
+      columns:
+        - name: brewery_id
+          tests:
+            - unique
+            - not_null
+
+    - name: mrt__brewery__breweries
+
+      columns:
+        - name: state
+          tests:
+            - not_null
+
+        - name: total_breweries
+          tests:
+            - not_null
+            - positive_values
+
+        - name: state_rank
+          tests:
+            - not_null
+
+        - name: brewery_type
+          tests:
+            - accepted_values:
+                arguments:
+                    values: ['micro', 'brewpub', 'closed', 'proprietor', 'large']
