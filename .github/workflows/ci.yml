@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Show repo structure
+        run: ls -R
+        
       - name: Checkout repo
         uses: actions/checkout@v4
 
