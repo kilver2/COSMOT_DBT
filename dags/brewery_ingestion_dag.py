@@ -45,7 +45,7 @@ def brewery_ingestion():
         cursor = connection.cursor()
         log.info("Connected to Databricks successfully")
 
-        catalog = "brewery"
+        catalog = "brewery_dev"
         schema = "bronze"
         table = "raw_breweries"
         full_table_name = f"{catalog}.{schema}.{table}"
