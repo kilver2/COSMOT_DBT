@@ -23,6 +23,6 @@ jobs:
 
       - name: Run SQLFluff
         run: |
-            sqlfluff lint include/dbt/brewery/models --verbose\ 
+            sqlfluff lint include/dbt/brewery/models \ 
             --dialect databricks \
             --templater jinja
