@@ -27,13 +27,17 @@ models:
 
     staging:
       +materialized: view
+      +tags: ['silver']
       +schema: silver
 
     intermediate:
       +materialized: view
+      +tags: ['silver']
       +schema: silver
 
     marts:
       +materialized: incremental
+      +tags: ['gold']
       +schema: gold
+      on_schema_change: 'append_new_columns'
     

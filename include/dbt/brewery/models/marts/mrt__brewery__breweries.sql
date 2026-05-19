@@ -51,7 +51,9 @@ select
     rs.state_rank,
     sb.brewery_type,
     sb.brewery_count,
-    rs.total_breweries
+    rs.total_breweries,
+    current_timestamp() as published_at
+
 
 from state_breweries as sb
 
