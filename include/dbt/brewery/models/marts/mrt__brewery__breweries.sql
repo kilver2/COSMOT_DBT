@@ -7,15 +7,15 @@ with breweries as (
 
 state_breweries as (
 
-    select 
-        count(*) as brewery_count, 
-        state, 
-        brewery_type
-    
+    select
+        state,
+        brewery_type,
+        count(*) as brewery_count
+
     from breweries
 
-    group by 
-        state, 
+    group by
+        state,
         brewery_type
 
 ),
@@ -23,9 +23,9 @@ state_breweries as (
 state_totals as (
 
     select
-        count(*) as total_breweries,
-        state
-    
+        state,
+        count(*) as total_breweries
+
     from breweries
 
     group by state
@@ -46,7 +46,7 @@ ranked_states as (
 
 )
 
-select 
+select
     sb.state,
     rs.state_rank,
     sb.brewery_type,
@@ -54,14 +54,13 @@ select
     rs.total_breweries,
     current_timestamp() as published_at
 
-
 from state_breweries as sb
 
-join ranked_states as rs
+inner join ranked_states as rs
     on sb.state = rs.state
 
 where rs.state_rank <= 10
 
 order by
-    rs.state_rank,
+    rs.state_rank asc,
     sb.brewery_count desc
