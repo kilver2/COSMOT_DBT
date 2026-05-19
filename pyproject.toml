@@ -13,4 +13,5 @@ dependencies = [
     "pytest>=9.0.3",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
+    "sqlfluff-templater-dbt>=4.2.1",
 ]
