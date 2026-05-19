@@ -11,6 +11,7 @@ profile_config = ProfileConfig(
     profiles_yml_filepath=DBT_PROJECT_PATH / "profiles.yml",  # ← use profiles.yml directly
 )
 
+# Some random tests ahahah
 dbt_dag = DbtDag(
     dag_id="dbt_brewery_silver_gold",
     project_config=ProjectConfig(
