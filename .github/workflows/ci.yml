@@ -19,8 +19,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install sqlfluff sqlfluff-templater-dbt
+          pip install sqlfluff sqlfluff-templater-dbt dbt-core
 
-      - name: Run SQLFluff
+      - name: Run SQLFluff (debug)
         run: |
-          sqlfluff lint include/dbt/brewery/models
+            sqlfluff lint include/dbt/brewery/models --verbose
