@@ -21,6 +21,8 @@ jobs:
         run: |
           pip install sqlfluff sqlfluff-templater-dbt dbt-core
 
-      - name: Run SQLFluff (debug)
+      - name: Run SQLFluff
         run: |
-            sqlfluff lint include/dbt/brewery/models --verbose
+            sqlfluff lint include/dbt/brewery/models --verbose\ 
+            --dialect databricks \
+            --templater jinja
